@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
   "extends": [
     "@rocketseat/eslint-config/next",
     "next"
   ]
-=======
-  "extends": "next/core-web-vitals"
->>>>>>> c9e1b52 (chore: init project)
 }
