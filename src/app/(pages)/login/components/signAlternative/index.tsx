@@ -3,17 +3,8 @@ import Styles from 'styled-components'
 import Image from 'next/image'
 import theme from '../../../../../themes'
 
-const OrDiv = Styles.div`
-    border-bottom: 1px solid rgba(255,255,255,1);
-    width: 350px;
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
 const Line = Styles.div`
-    margin-top: 60px;
+    margin-top: 50px;
     flex-grow: 1;
     height: 1px;
     width: 350px;
@@ -29,10 +20,7 @@ const SignButton = Styles.button`
     margin: 40px 10px;
     border-radius: 8px;
 `
-/*
-    margin-top: -1vh;
-    margin-left: 10%; 
-    position: relative;*/
+
 const OrText = Styles.span`
     position: absolute;
     padding: 0px 15px;
@@ -40,8 +28,8 @@ const OrText = Styles.span`
     color: #fff;
     pointer-events: none;
     background: ${theme.BACKGROUND};
-    top: 40px;
-    left: 45%;
+    top: 30px;
+    left: 42%;
     transition: top 0.3s ease;
 `
 const Conteiner = Styles.div`

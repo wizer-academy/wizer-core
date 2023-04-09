@@ -2,6 +2,7 @@
 import Button from "./components/button/";
 import Input from "./components/input/";
 import SignAlternative from "./components/signAlternative/";
+import SwitchForm from "./components/switchForm/";
 import theme from '../../../themes';
 import Styles from 'styled-components'
 import Image from 'next/image'
@@ -79,10 +80,7 @@ export default function Login() {
     <ConteinerForm>
       <Image src="/logo.svg" alt="me" width="128" height="64" />
       <h2>Entre na sua conta</h2>
-      <div>
-        <button></button>
-        <button></button>
-      </div>
+      <SwitchForm/>
       <Input placeholder="Digite aqui seu e-mail" type='email'>E-mail</Input>
       <Input placeholder="Digite aqui sua senha" type='password'>Senha</Input>
       <p style={{marginLeft: '35%'}}>Esqueceu sua senha?</p>
