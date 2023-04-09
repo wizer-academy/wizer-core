@@ -5,7 +5,7 @@ import theme from '../../../../../themes';
 const LoginInputBox = Styles.div`
     box-sizing: border-box;
 
-    margin-top: 35px;
+    margin-top: 30px;
     padding: 0;
     background: #000
 `
