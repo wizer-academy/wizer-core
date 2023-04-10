@@ -1,6 +1,6 @@
 'use client'
 import Styles from 'styled-components'
-import theme from '../../../../../themes';
+import theme from '../../../themes';
 
 const LoginInputBox = Styles.div`
     box-sizing: border-box;
