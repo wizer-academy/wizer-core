@@ -18,6 +18,7 @@ const SignButton = Styles.button`
     height: 40px;
     margin-top: 62px;
     margin: 40px 10px;
+	border: none;
     border-radius: 8px;
 `
 
