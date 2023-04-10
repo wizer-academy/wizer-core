@@ -1,12 +1,13 @@
 'use client'
-import Button from "./components/button/";
-import Input from "./components/input/";
+import Button from "../../components/button/";
+import Input from "../../components/input/";
 import SignAlternative from "./components/signAlternative/";
 import SwitchForm from "./components/switchForm/";
 import theme from '../../../themes';
 import Styles from 'styled-components'
 import Image from 'next/image'
 import { Poppins } from 'next/font/google'
+import Link from "next/link";
 
 const poppins = Poppins({
   weight: '400',
@@ -67,28 +68,36 @@ const Conteiner = Styles.div`
   color: #fff;
 `
 
+
+const ForgetPasssowrd = Styles.p`
+  width: 350px;
+  text-align: right;
+`
+
 export default function Login() {
   return (
     <>
-    <Conteiner>
-    
-    <ConteinerMessage>
-      <BackImage/>
-      <Message>Você está a um passo do seu <b>futuro</b></Message>
-    </ConteinerMessage>
+      <Conteiner>
 
-    <ConteinerForm>
-      <Image src="/logo.svg" alt="me" width="128" height="64" />
-      <h2>Entre na sua conta</h2>
-      <SwitchForm isLogin={true}/>
-      <Input placeholder="Digite aqui seu e-mail" type='email'>E-mail</Input>
-      <Input placeholder="Digite aqui sua senha" type='password'>Senha</Input>
-      <p style={{marginLeft: '35%'}}>Esqueceu sua senha?</p>
-      <Button>Entrar</Button>
-      <SignAlternative/>
-    </ConteinerForm>
+        <ConteinerMessage>
+          <BackImage />
+          <Message>Você está a um passo do seu <b>futuro</b></Message>
+        </ConteinerMessage>
 
-    </Conteiner>
+        <ConteinerForm>
+          <Image src="/logo.svg" alt="me" width="128" height="64" />
+          <h2>Entre na sua conta</h2>
+          <SwitchForm isLogin={true} />
+          <Input placeholder="Digite aqui seu e-mail" type='email'>E-mail</Input>
+          <Input placeholder="Digite aqui sua senha" type='password'>Senha</Input>
+          <ForgetPasssowrd>
+            <Link href='/login' style={{ textDecoration: 'none', color: '#fff' }}>Esqueceu sua senha?</Link>
+          </ForgetPasssowrd>
+          <Button>Entrar</Button>
+          <SignAlternative />
+        </ConteinerForm>
+
+      </Conteiner>
 
     </>
   )
