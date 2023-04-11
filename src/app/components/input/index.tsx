@@ -42,7 +42,7 @@ const LoginInput = Styles.input`
 export default function Button(props: any) {
     return (
         <LoginInputBox>
-            <LoginInput placeholder={props.placeholder} type={props.type} required/>
+            <LoginInput value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type} required/>
             <LoginInputLabel>{props.children}</LoginInputLabel>
         </LoginInputBox>
     )

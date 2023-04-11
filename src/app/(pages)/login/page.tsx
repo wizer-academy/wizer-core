@@ -8,13 +8,15 @@ import Styles from 'styled-components'
 import Image from 'next/image'
 import { Poppins } from 'next/font/google'
 import Link from "next/link";
+import { useState } from "react";
 
 const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
 })
 
-const ConteinerForm = Styles.div`
+
+const ConteinerForm = Styles.form`
   background: ${theme.BACKGROUND};
   margin: 0 auto;
   width: 50%;
@@ -75,6 +77,14 @@ const ForgetPasssowrd = Styles.p`
 `
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = () => {
+    console.log('Email:', email);
+    console.log('Password:', password);
+  };
+
   return (
     <>
       <Conteiner>
@@ -84,16 +94,29 @@ export default function Login() {
           <Message>Você está a um passo do seu <b>futuro</b></Message>
         </ConteinerMessage>
 
-        <ConteinerForm>
+        <ConteinerForm onSubmit={handleSubmit}>
           <Image src="/logo.svg" alt="me" width="128" height="64" />
           <h2>Entre na sua conta</h2>
           <SwitchForm isLogin={true} />
-          <Input placeholder="Digite aqui seu e-mail" type='email'>E-mail</Input>
-          <Input placeholder="Digite aqui sua senha" type='password'>Senha</Input>
+
+          <Input
+            value={email}
+            onChange={(e: any) => setEmail(e.target.value)}
+            placeholder="Digite aqui seu e-mail"
+            type='email'
+          >E-mail</Input>
+          <Input
+            value={password}
+            onChange={(e: any) => setPassword(e.target.value)}
+            placeholder="Digite aqui sua senha"
+            type='password'
+          >Senha</Input>
+
           <ForgetPasssowrd>
             <Link href='/login' style={{ textDecoration: 'none', color: '#fff' }}>Esqueceu sua senha?</Link>
           </ForgetPasssowrd>
-          <Button>Entrar</Button>
+
+          <Button type="submit">Entrar</Button>
           <SignAlternative />
         </ConteinerForm>
 
