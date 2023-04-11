@@ -17,7 +17,7 @@ box-sizing: border-box;
 export default function Button(props: any) {
     return (
         <>
-        <LoginBtt>{props.children}</LoginBtt>
+        <LoginBtt type={props.type}>{props.children}</LoginBtt>
         </>
     )
   }
