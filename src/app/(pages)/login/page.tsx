@@ -34,8 +34,8 @@ const ConteinerMessage = Styles.div`
   place-items: center;
 `
 const BackImage = Styles.div`
-  background-image: url(/images/Rectangle_com_imagem.jpg);
-  opacity: 0.5;
+  background-image: url(/images/Rectangle_com_imagem.png);
+  opacity: 0.3;
   margin: 0 auto;
   width: 100%;
   height: 100%;
