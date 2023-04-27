@@ -18,23 +18,38 @@ const poppins = Poppins({
 const ConteinerForm = Styles.form`
   background: ${theme.BACKGROUND};
   margin: 0 auto;
-  width: 50%;
-  color: #fff;
-
-  display: grid;
-  place-items: center;
-`
-const ConteinerMessage = Styles.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   color: #fff;
-
+  overflow: scroll;
   display: grid;
   place-items: center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+ 
+  @media (min-width: 900px) {
+    width: 50%;
+  }
+`
+const ConteinerMessage = Styles.div`
+  width: 0%;
+  height: 100%;
+  color: #fff;
+  overflow: scroll;
+  display: grid;
+  place-items: center;
+
+  @media (min-width: 900px) {
+    width: 50%;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 const BackImage = Styles.div`
   background-image: url(/images/Rectangle_com_imagem.jpg);
-  opacity: 0.5;
+  opacity: 0.2;
   margin: 0 auto;
   width: 100%;
   height: 100%;
@@ -50,6 +65,10 @@ const Message = Styles.p`
 
   font-size: 40px;
   color: #fff;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `
 
 const Conteiner = Styles.div`
@@ -66,6 +85,10 @@ const Conteiner = Styles.div`
   height: 100vh;
   width: 100vw;
   color: #fff;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 const ForgetPasssowrd = Styles.p`
@@ -117,18 +140,21 @@ export default function SignUp() {
             onChange={(e: any) => setEmail(e.target.value)}
             placeholder="Digite aqui seu e-mail"
             type='email'
+            hasHiddenButton={false}
           >E-mail</Input>
           <Input
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
             placeholder="Digite aqui sua senha"
             type='password'
+            hasHiddenButton={true}
           >Senha</Input>
           <Input
             value={confirmedPassword}
             onChange={(e: any) => setConfirmedPassword(e.target.value)}
             placeholder="Digite novamente sua senha"
-            type='confirmedPassword'
+            type='password'
+            hasHiddenButton={true}
           >Confirme sua senha</Input>
 
           <div className="checboxterms">
