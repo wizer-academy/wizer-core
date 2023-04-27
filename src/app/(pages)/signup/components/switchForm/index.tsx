@@ -26,10 +26,10 @@ export default function Button({ isLogin }: any) {
         <>
             <Conteiner>
                 <Link href="/login">
-                    <SwtichBtt color={(isLogin) ? '#0C66C6' : '#ffffff80'}>Já tenho conta</SwtichBtt>
+                    <SwtichBtt color={(!isLogin) ? '#0C66C6' : '#ffffff80'}>Já tenho conta</SwtichBtt>
                 </Link>
                 <Link href="/signup">
-                    <SwtichBtt color={(!isLogin) ? '#0C66C6' : '#ffffff80'}>Criar conta</SwtichBtt>
+                    <SwtichBtt color={(isLogin) ? '#0C66C6' : '#ffffff80'}>Criar conta</SwtichBtt>
                 </Link>
             </Conteiner>
         </>
