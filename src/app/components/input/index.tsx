@@ -11,7 +11,7 @@ const LoginInputBox = Styles.div`
 `
 
 const LoginInputLabel = Styles.span`
-    position: absolute;
+    position: fixed;
     margin-top: -20px;
     margin-left: -350px;
     padding: 0px 10px;
@@ -23,7 +23,7 @@ const LoginInputLabel = Styles.span`
 
 const LoginInput = Styles.input`
     width: 350px;
-    height: 30px;
+    height: 25px;
     padding: 12px;
     border: 1px solid rgba(255, 255, 255, 1);
     background: ${theme.BACKGROUND};
@@ -41,9 +41,13 @@ const LoginInput = Styles.input`
 
 export default function Button(props: any) {
     return (
+        <div style={{display: "block"}}>
         <LoginInputBox>
+            
             <LoginInput value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type} required/>
             <LoginInputLabel>{props.children}</LoginInputLabel>
+            
         </LoginInputBox>
+        </div>
     )
   }

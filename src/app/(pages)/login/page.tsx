@@ -19,23 +19,41 @@ const poppins = Poppins({
 const ConteinerForm = Styles.form`
   background: ${theme.BACKGROUND};
   margin: 0 auto;
-  width: 50%;
-  color: #fff;
-
-  display: grid;
-  place-items: center;
-`
-const ConteinerMessage = Styles.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   color: #fff;
+  overflow: scroll;
 
   display: grid;
   place-items: center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+ 
+  @media (min-width: 900px) {
+    width: 50%;
+  }
+`
+const ConteinerMessage = Styles.div`
+  width: 0;
+  height: 100%;
+  color: #fff;
+  overflow: scroll;
+
+  display: grid;
+  place-items: center;
+ 
+  @media (min-width: 900px) {
+    width: 50%;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 const BackImage = Styles.div`
   background-image: url(/images/Rectangle_com_imagem.png);
-  opacity: 0.3;
+  opacity: 0.2;
   margin: 0 auto;
   width: 100%;
   height: 100%;
@@ -51,6 +69,10 @@ const Message = Styles.p`
 
   font-size: 40px;
   color: #fff;
+ 
+  @media (max-width: 900px) {
+    display: none;
+  }
 `
 
 
@@ -68,6 +90,10 @@ const Conteiner = Styles.div`
   height: 100vh;
   width: 100vw;
   color: #fff;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 
