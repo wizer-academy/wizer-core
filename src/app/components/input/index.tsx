@@ -1,6 +1,10 @@
 'use client'
 import Styles from 'styled-components'
 import theme from '../../../themes';
+import { MdOutlineRemoveRedEye } from 'react-icons/md';
+import { RxEyeClosed } from 'react-icons/rx';
+import { useState } from 'react';
+
 
 const LoginInputBox = Styles.div`
     box-sizing: border-box;
@@ -39,15 +43,44 @@ const LoginInput = Styles.input`
   }
 `
 
+const ButtonInputHidde = Styles.button`
+    position: fixed;
+    margin-top: 14px;
+    margin-left: -50px;
+    padding: 0px 10px;
+    color: #fff;
+    border: none;
+    /*pointer-events: none;*/
+    background: ${theme.BACKGROUND};
+`
+
 export default function Button(props: any) {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handlePasswordToggle = () => {
+        setShowPassword(!showPassword);
+    }
+
+
     return (
-        <div style={{display: "block"}}>
-        <LoginInputBox>
-            
-            <LoginInput value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type} required/>
-            <LoginInputLabel>{props.children}</LoginInputLabel>
-            
-        </LoginInputBox>
+        <div style={{ display: "block" }}>
+            <LoginInputBox>
+
+                <LoginInput
+                    value={props.value}
+                    onChange={props.onChange}
+                    placeholder={props.placeholder}
+                    type={showPassword ? 'text' : props.type} required />
+                {(props.hasHiddenButton) ?
+                <ButtonInputHidde
+                    type="button"
+                    onClick={handlePasswordToggle}
+                >{showPassword ? <MdOutlineRemoveRedEye size={24} /> : <RxEyeClosed size={24} />}
+                </ButtonInputHidde> : <></> }
+                <LoginInputLabel>{props.children}</LoginInputLabel>
+
+            </LoginInputBox>
         </div>
     )
-  }
+
+}

@@ -130,12 +130,14 @@ export default function Login() {
             onChange={(e: any) => setEmail(e.target.value)}
             placeholder="Digite aqui seu e-mail"
             type='email'
+            hasHiddenButton={false}
           >E-mail</Input>
           <Input
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
             placeholder="Digite aqui sua senha"
             type='password'
+            hasHiddenButton={true}
           >Senha</Input>
 
           <ForgetPasssowrd>
