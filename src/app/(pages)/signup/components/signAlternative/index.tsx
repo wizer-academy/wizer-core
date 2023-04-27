@@ -14,10 +14,11 @@ const Line = Styles.div`
 
 const SignButton = Styles.button`
     background: ${(props) => props.color || 'blue'};
-    width: 50px;
-    height: 40px;
+    width: 60px;
+    height: 45px;
+    padding-top: 5px;
     margin-top: 62px;
-    margin: 40px 10px;
+    margin: 35px 10px;
 	border: none;
     border-radius: 8px;
 `
@@ -46,6 +47,7 @@ const OrLine = Styles.div`
 `
 
 export default function SignAlternative() {
+    const iconSize: any = 26
     return (
         <>
             <OrLine>
@@ -55,16 +57,16 @@ export default function SignAlternative() {
             </OrLine>
             <Conteiner>
                 <SignButton color="#3B5998" >
-                    <Image src="/icons/facebook.svg" alt="me" width="24" height="24" />
+                    <Image src="/icons/facebook.svg" alt="me" width={iconSize} height={iconSize} />
                 </SignButton>
                 <SignButton color="#E52C34" >
-                    <Image src="/icons/google.svg" alt="me" width="24" height="24" />
+                    <Image src="/icons/google.svg" alt="me" width={iconSize} height={iconSize} />
                 </SignButton>
                 <SignButton color="#F8F8F8" >
-                    <Image src="/icons/apple.svg" alt="me" width="24" height="24" />
+                    <Image src="/icons/apple.svg" alt="me" width={iconSize} height={iconSize} />
                 </SignButton>
                 <SignButton color="#4E4C83" >
-                    <Image src="/icons/github.svg" alt="me" width="24" height="24" />
+                    <Image src="/icons/github.svg" alt="me" width={iconSize} height={iconSize} />
                 </SignButton>
             </Conteiner>
         </>
