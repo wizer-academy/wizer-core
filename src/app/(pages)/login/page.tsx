@@ -1,31 +1,51 @@
-'use client'
+"use client";
 import Button from "../../components/button/";
 import Input from "../../components/input/";
 import SignAlternative from "./components/signAlternative/";
 import SwitchForm from "./components/switchForm/";
-import theme from '../../../themes';
-import Styles from 'styled-components'
-import Image from 'next/image'
-import { Poppins } from 'next/font/google'
+import theme from "../../../themes";
+import Styles from "styled-components";
+import Image from "next/image";
+import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
+import axios from "axios";
+import Router from "next/router";
 
 const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin'],
-})
-
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const ConteinerForm = Styles.form`
   background: ${theme.BACKGROUND};
   margin: 0 auto;
+<<<<<<< HEAD
   width: 100%;
+=======
+  width: 50%;
+  color: #fff;
+
+  display: grid;
+  place-items: center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+ 
+  @media (min-width: 900px) {
+    width: 50%;
+  }
+`
+const ConteinerMessage = Styles.div`
+  width: 50%;
+>>>>>>> 4b0019b (chore: solution conflicts)
   height: 100%;
   color: #fff;
   overflow: scroll;
 
   display: grid;
   place-items: center;
+<<<<<<< HEAD
   &::-webkit-scrollbar {
     display: none;
   }
@@ -42,6 +62,8 @@ const ConteinerMessage = Styles.div`
 
   display: grid;
   place-items: center;
+=======
+>>>>>>> 4b0019b (chore: solution conflicts)
  
   @media (min-width: 900px) {
     width: 50%;
@@ -61,7 +83,7 @@ const BackImage = Styles.div`
 
   display: grid;
   place-items: center;
-`
+`;
 const Message = Styles.p`
   position: absolute;
   margin-left: -20vw;
@@ -100,24 +122,36 @@ const Conteiner = Styles.div`
 const ForgetPasssowrd = Styles.p`
   width: 350px;
   text-align: right;
-`
+`;
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    console.log('Email:', email);
-    console.log('Password:', password);
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    console.log("Email:", email);
+    console.log("Password:", password);
+
+    axios
+      .post("http://localhost:4000/auth/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res.data);
+        Router.push("/");
+      });
   };
 
   return (
     <>
       <Conteiner>
-
         <ConteinerMessage>
           <BackImage />
-          <Message>Você está a um passo do seu <b>futuro</b></Message>
+          <Message>
+            Você está a um passo do seu <b>futuro</b>
+          </Message>
         </ConteinerMessage>
 
         <ConteinerForm onSubmit={handleSubmit}>
@@ -141,15 +175,18 @@ export default function Login() {
           >Senha</Input>
 
           <ForgetPasssowrd>
-            <Link href='/login' style={{ textDecoration: 'none', color: '#fff' }}>Esqueceu sua senha?</Link>
+            <Link
+              href="/login"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              Esqueceu sua senha?
+            </Link>
           </ForgetPasssowrd>
 
           <Button type="submit">Entrar</Button>
           <SignAlternative />
         </ConteinerForm>
-
       </Conteiner>
-
     </>
-  )
+  );
 }
