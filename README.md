@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wizer Core
 
-## Getting Started
+Prepare-se para a revolução educacional com a Wizer! Estamos construindo uma plataforma de Streaming Educacional inovadora, que oferecerá acesso gratuito a conteúdo educativo de alta qualidade. Nossa missão é tornar a educação acessível a todos, em qualquer lugar. Junte-se a nós nessa jornada emocionante enquanto construímos o futuro da aprendizagem.
 
-First, run the development server:
+## Sobre o Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+O Wizer Core é a parte do projeto responsável pela interface do usuário da plataforma Wizer. Ele foi desenvolvido utilizando o framework Nest.js em conjunto com o framework de UI Tailwind CSS, ambos utilizando TypeScript como linguagem principal.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Nest.js:** Framework de desenvolvimento para Node.js, que oferece uma arquitetura modular e baseada em componentes, facilitando a construção de aplicativos escaláveis e robustos.
+-   **TypeScript:** Linguagem de programação que adiciona tipagem estática opcional ao JavaScript, permitindo um desenvolvimento mais seguro e produtivo.
+-   **Tailwind CSS:** Framework de CSS utilitário altamente configurável, que permite a criação de interfaces responsivas e personalizáveis de forma eficiente.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Como Usar
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Certifique-se de ter o Node.js e o npm instalados em sua máquina.
+2. Clone este repositório: `git clone <https://github.com/wizer-academy/wizer-core.git>`
+3. Navegue até o diretório do projeto: `cd wizer-core`
+4. Instale as dependências do projeto: `npm install`
+5. Configure as variáveis de ambiente necessárias (consulte o arquivo `.env.example` para obter detalhes).
+6. Inicie o servidor de desenvolvimento: `npm run start`
+7. O aplicativo estará sendo executado em `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contribuindo
 
-## Learn More
+Agradecemos seu interesse em contribuir para o desenvolvimento da plataforma Wizer. Se você deseja colaborar, siga as etapas abaixo:
 
-To learn more about Next.js, take a look at the following resources:
+1. Crie um fork deste repositório.
+2. Crie uma branch para sua feature/correção: `git checkout -b minha-feature`.
+3. Faça as alterações desejadas e commit as mudanças: `git commit -m "Minha feature super legal"`.
+4. Envie as alterações para o seu repositório fork: `git push origin minha-feature`.
+5. Abra um pull request neste repositório, descrevendo suas alterações.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Suporte
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Se você tiver alguma dúvida ou encontrar algum problema, sinta-se à vontade para entrar em contato com nossa equipe de suporte em <support@wizer.com>.
 
-## Deploy on Vercel
+## Licença
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto está licenciado sob os termos da Licença Apache-2.0 license. Consulte o arquivo `LICENSE` para obter mais informações.
