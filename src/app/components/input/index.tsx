@@ -8,7 +8,6 @@ import { useState } from 'react';
 
 const LoginInputBox = Styles.div`
     box-sizing: border-box;
-
     margin-top: 30px;
     padding: 0;
     background: #000
@@ -34,7 +33,6 @@ const LoginInput = Styles.input`
     border-radius: 5px;
     outline: none;
     color: #fff;
-
     &::placeholder {
     color: #6A6D7178;
     margin: 0;
