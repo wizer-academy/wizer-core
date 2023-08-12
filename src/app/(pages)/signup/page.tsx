@@ -10,6 +10,8 @@ import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
 import axios from "axios";
+//import Router from "next/router";
+import { useRouter } from 'next/navigation';
 
 const poppins = Poppins({
   weight: "400",
@@ -103,6 +105,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
   const [isCheckedTerms, setIsChecked] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -112,7 +115,7 @@ export default function SignUp() {
     console.log("Password:", password);
     console.log("ConfirmedPassword:", confirmedPassword);
     console.log("Terms:", isCheckedTerms);
-
+    
     axios
       .post("http://localhost:4000/user", {
         email: email,
@@ -121,6 +124,7 @@ export default function SignUp() {
       })
       .then((res) => {
         console.log(res.data);
+        router.push("/photo");
       })
       .catch((error) => {
         console.log(error);

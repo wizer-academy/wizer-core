@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import axios from "axios";
 import Router from "next/router";
+import { useRouter } from "next/navigation";
 
 const poppins = Poppins({
   weight: "400",
@@ -80,12 +81,25 @@ const FileInput = Styles.input`
 `
 
 export default function Photo() {
-  const [selectedImage, setSelectedImage]: any = useState("")
+  const [selectedImage, setSelectedImage]: any = useState<String | null>("")
   const inputRef = useRef<HTMLInputElement | null>(null)
+  const router = useRouter();
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+    
+    axios
+      .post("http://localhost:4000/user/upload-photo", {
+        file: selectedImage,
+      })
+      .then((res) => {
+        console.log(res.data);
+        router.push("/choose");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const handleImageChange = (event: any) => {
     const file = event.target.files[0];
@@ -95,7 +109,7 @@ export default function Photo() {
     if (file && allowedTypes.includes(file.type) && file.size <= maxSize) {
       const reader = new FileReader()
 
-      reader.onload = (event: any) => {
+      reader.onload = () => {
         setSelectedImage(reader.result)
       }
       reader.readAsDataURL(file)
@@ -126,12 +140,12 @@ export default function Photo() {
 
           </div>
 
-          <Button type="submit"><Link
+          <Button type="submit">{/* <Link
               href="/choose"
               style={{ textDecoration: "none", color: "#fff" }}
-            >
+            > */}
               Tudo pronto
-            </Link></Button>
+            {/* </Link> */}</Button>
 
           <ForgetPasssowrd>
             <Link

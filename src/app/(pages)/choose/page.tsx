@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import axios from "axios";
 import Router from "next/router";
+import { useRouter } from "next/navigation";
 
 const poppins = Poppins({
   weight: "400",
@@ -110,13 +111,14 @@ const ForgetPasssowrd = Styles.p`
 
 
 export default function Photo() {
-  const [selectedCourses, setSelectedCourses] = useState([0])
+  const [selectedCourses, setSelectedCourses] = useState<number[]>([])
+  const router = useRouter();
 
   const handleCourseSelection = (courseId: number) => {
     if (selectedCourses.includes(courseId)) {
       setSelectedCourses(selectedCourses.filter((id) => id !== courseId))
     } else {
-      if (selectedCourses.length <= 3) {
+      if (selectedCourses.length < 3) {
         setSelectedCourses([...selectedCourses, courseId])
       }
       else {
@@ -128,6 +130,18 @@ export default function Photo() {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
     console.log("courses id:", selectedCourses)
+
+    axios
+      .post("http://localhost:4000/user/interests", {
+        interests: selectedCourses,
+      })
+      .then((res) => {
+        console.log(res.data);
+        router.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   return (
@@ -163,7 +177,7 @@ export default function Photo() {
 
 
           <Button type="submit"
-            isActive={(selectedCourses.length <= 3)}
+            isActive={(selectedCourses.length < 3)}
 
           ><Link
           href="/"
