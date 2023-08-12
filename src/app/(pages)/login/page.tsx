@@ -34,7 +34,7 @@ const ConteinerForm = Styles.form`
   @media (min-width: 900px) {
     width: 50%;
   }
-`
+`;
 const ConteinerMessage = Styles.div`
   width: 0;
   height: 100%;
@@ -51,7 +51,7 @@ const ConteinerMessage = Styles.div`
   &::-webkit-scrollbar {
     display: none;
   }
-`
+`;
 const BackImage = Styles.div`
   background-image: url(/images/Rectangle_com_imagem.png);
   opacity: 0.2;
@@ -74,8 +74,7 @@ const Message = Styles.p`
   @media (max-width: 900px) {
     display: none;
   }
-`
-
+`;
 
 const Conteiner = Styles.div`
   display: flex;
@@ -95,8 +94,7 @@ const Conteiner = Styles.div`
   &::-webkit-scrollbar {
     display: none;
   }
-`
-
+`;
 
 const ForgetPasssowrd = Styles.p`
   width: 350px;
@@ -142,16 +140,20 @@ export default function Login() {
             value={email}
             onChange={(e: any) => setEmail(e.target.value)}
             placeholder="Digite aqui seu e-mail"
-            type='email'
+            type="email"
             hasHiddenButton={false}
-          >E-mail</Input>
+          >
+            E-mail
+          </Input>
           <Input
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
             placeholder="Digite aqui sua senha"
-            type='password'
+            type="password"
             hasHiddenButton={true}
-          >Senha</Input>
+          >
+            Senha
+          </Input>
 
           <ForgetPasssowrd>
             <Link
