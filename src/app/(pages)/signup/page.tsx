@@ -10,7 +10,6 @@ import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
 import axios from "axios";
-import Router from "next/router";
 
 const poppins = Poppins({
   weight: "400",
@@ -24,7 +23,6 @@ const ConteinerForm = Styles.form`
   height: 100%;
   color: #fff;
   overflow: scroll;
-
   display: grid;
   place-items: center;
   &::-webkit-scrollbar {
@@ -36,24 +34,22 @@ const ConteinerForm = Styles.form`
   }
 `;
 const ConteinerMessage = Styles.div`
-  width: 0;
+  width: 0%;
   height: 100%;
   color: #fff;
   overflow: scroll;
-
   display: grid;
   place-items: center;
- 
+
   @media (min-width: 900px) {
     width: 50%;
   }
-
   &::-webkit-scrollbar {
     display: none;
   }
 `;
 const BackImage = Styles.div`
-  background-image: url(/images/Rectangle_com_imagem.png);
+  background-image: url(/images/Rectangle_com_imagem.jpg);
   opacity: 0.2;
   margin: 0 auto;
   width: 100%;
@@ -70,7 +66,7 @@ const Message = Styles.p`
 
   font-size: 40px;
   color: #fff;
- 
+
   @media (max-width: 900px) {
     display: none;
   }
@@ -101,24 +97,38 @@ const ForgetPasssowrd = Styles.p`
   text-align: right;
 `;
 
-export default function Login() {
+export default function SignUp() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmedPassword, setConfirmedPassword] = useState("");
+  const [isCheckedTerms, setIsChecked] = useState(false);
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+
+    console.log("Name:", name);
     console.log("Email:", email);
     console.log("Password:", password);
+    console.log("ConfirmedPassword:", confirmedPassword);
+    console.log("Terms:", isCheckedTerms);
 
     axios
-      .post("http://localhost:4000/auth/login", {
-        email,
-        password,
+      .post("http://localhost:4000/user", {
+        email: email,
+        password: password,
+        name: name,
       })
       .then((res) => {
         console.log(res.data);
-        Router.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
       });
+  };
+
+  const handleOnChange = () => {
+    setIsChecked(!isCheckedTerms);
   };
 
   return (
@@ -133,9 +143,17 @@ export default function Login() {
 
         <ConteinerForm onSubmit={handleSubmit}>
           <Image src="/logo.svg" alt="me" width="128" height="64" />
-          <h2>Entre na sua conta</h2>
+          <h2>Criar sua conta Wizer</h2>
           <SwitchForm isLogin={true} />
 
+          <Input
+            value={name}
+            onChange={(e: any) => setName(e.target.value)}
+            placeholder="Digite aqui seu nome"
+            type="name"
+          >
+            Nome completo
+          </Input>
           <Input
             value={email}
             onChange={(e: any) => setEmail(e.target.value)}
@@ -154,17 +172,29 @@ export default function Login() {
           >
             Senha
           </Input>
+          <Input
+            value={confirmedPassword}
+            onChange={(e: any) => setConfirmedPassword(e.target.value)}
+            placeholder="Digite novamente sua senha"
+            type="password"
+            hasHiddenButton={true}
+          >
+            Confirme sua senha
+          </Input>
 
-          <ForgetPasssowrd>
-            <Link
-              href="/login"
-              style={{ textDecoration: "none", color: "#fff" }}
-            >
-              Esqueceu sua senha?
-            </Link>
-          </ForgetPasssowrd>
+          <div className="checboxterms">
+            <input
+              type="checkbox"
+              id="checboxterms"
+              name="checboxterms"
+              value="isCheckedTerms"
+              checked={isCheckedTerms}
+              onChange={handleOnChange}
+            />
+            Eu concordo com os <b>termos e condições</b>
+          </div>
 
-          <Button type="submit">Entrar</Button>
+          <Button type="submit">Criar</Button>
           <SignAlternative />
         </ConteinerForm>
       </Conteiner>
