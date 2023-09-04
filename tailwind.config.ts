@@ -13,12 +13,19 @@ const config: Config = {
         background: 'var(--background)',
         text: 'var(--text)',
         primary: 'var(--primary)',
+<<<<<<< HEAD
         alert: 'var(--alert)',
         success: 'var(--success)',
       },
       backgroundImage: {
         'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",
         'background-blur': "url('/images/background-blur.svg')",
+=======
+      },
+      backgroundImage: {
+        'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",
+        'sign-in-background': "url('/images/sign-in-background.png')",
+>>>>>>> 3b0e00b (feat: add structure of sign in and sign up page)
       },
     },
     fontFamily: {
