@@ -16,7 +16,7 @@ const config: Config = {
       },
       backgroundImage: {
         'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",
-        'sign-in-background': "url('/images/sign-in-background.png')",
+        'background-blur': "url('/images/background-blur.svg')",
       },
     },
     fontFamily: {
