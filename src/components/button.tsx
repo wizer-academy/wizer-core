@@ -7,7 +7,11 @@ import { tv, type VariantProps } from 'tailwind-variants'
  */
 
 const buttonVariants = tv({
+<<<<<<< HEAD
   base: 'inline-flex items-center justify-center rounded-[10px] md:text-xl font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:bg-[#32405B]',
+=======
+  base: 'inline-flex items-center justify-center rounded-[10px] text-xl font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:bg-[#32405B]',
+>>>>>>> d7534b5 (feat: add sign up form)
   variants: {
     variant: {
       default: 'bg-primary hover:bg-primary/80',

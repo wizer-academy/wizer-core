@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 export default function SignUp() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return <SignUpForm />
 =======
   return (
@@ -54,4 +55,7 @@ export default function SignUp() {
     </form>
   )
 >>>>>>> 6e0a526 (feat: finish sign in validation form)
+=======
+  return <SignUpForm />
+>>>>>>> d7534b5 (feat: add sign up form)
 }
