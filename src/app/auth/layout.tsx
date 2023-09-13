@@ -20,13 +20,8 @@ export default function AuthLayout({
         </h1>
       </div>
 
-<<<<<<< HEAD
       <div className="relative flex w-full flex-col justify-center overflow-hidden md:py-10">
         <div className="absolute -right-1/4 -top-1/3 -z-20 h-3/4 w-3/4 bg-background-blur bg-cover bg-no-repeat md:-right-1/3 md:top-[65%] " />
-=======
-      <div className="relative flex w-full flex-col justify-center overflow-y-auto py-10">
-        <div className="absolute bottom-0 right-0 -z-20 min-h-screen w-full bg-background-blur bg-cover bg-no-repeat" />
->>>>>>> 6e0a526 (feat: finish sign in validation form)
 
         <div className="mx-auto flex w-full max-w-[387px] flex-col px-8 md:max-w-[453px]">
           <Logo className="mx-auto h-[33px] w-[106px] md:h-[55px] md:w-[177px]" />

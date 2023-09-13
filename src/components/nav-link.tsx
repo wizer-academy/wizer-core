@@ -16,11 +16,7 @@ export function NavLink(props: NavLinkProps) {
     <Link
       data-active={isActive}
       className={twMerge(
-<<<<<<< HEAD
         'relative flex w-full items-center justify-center py-[13px] text-xs text-[#6A6D71] transition-colors hover:text-white data-[active=true]:text-base data-[active=true]:font-semibold data-[active=true]:text-white md:text-lg md:data-[active=true]:text-lg',
-=======
-        'relative flex w-full items-center justify-center py-[13px] text-lg text-[#6A6D71] transition-colors hover:text-white data-[active=true]:font-semibold data-[active=true]:text-white',
->>>>>>> 6e0a526 (feat: finish sign in validation form)
         props.className,
       )}
       {...props}

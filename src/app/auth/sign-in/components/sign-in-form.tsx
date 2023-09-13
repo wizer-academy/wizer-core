@@ -48,11 +48,7 @@ export function SignInForm() {
   const hasFiledErrors = !!Object.values(errors).length
 
   return (
-<<<<<<< HEAD
     <form onSubmit={handleSubmit(handleSignIn)} className="mt-9 w-full">
-=======
-    <form onSubmit={handleSubmit(handleSignIn)} className="mt-9 ">
->>>>>>> 6e0a526 (feat: finish sign in validation form)
       <div className="space-y-[37px]">
         <div className="space-y-2">
           <InputRoot error={!!errors.email}>

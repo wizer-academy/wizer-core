@@ -15,10 +15,6 @@ const config: Config = {
         primary: 'var(--primary)',
         alert: 'var(--alert)',
         success: 'var(--success)',
-<<<<<<< HEAD
-
-=======
->>>>>>> d7534b5 (feat: add sign up form)
       },
       backgroundImage: {
         'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",

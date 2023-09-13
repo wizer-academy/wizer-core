@@ -39,15 +39,7 @@ function InputRoot({ error = false, ...props }: InputRootProps) {
       <div
         data-error={error}
         className={twMerge(
-<<<<<<< HEAD
-<<<<<<< HEAD
           'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px] transition-colors',
-=======
-          'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px]',
->>>>>>> 6e0a526 (feat: finish sign in validation form)
-=======
-          'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px] transition-colors',
->>>>>>> d7534b5 (feat: add sign up form)
           props.className,
         )}
         {...props}
@@ -87,15 +79,7 @@ function InputLabel(props: InputLabelProps) {
     <label
       data-error={error}
       className={twMerge(
-<<<<<<< HEAD
-<<<<<<< HEAD
         'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium transition-colors',
-=======
-        'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium',
->>>>>>> 6e0a526 (feat: finish sign in validation form)
-=======
-        'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium transition-colors',
->>>>>>> d7534b5 (feat: add sign up form)
         props.className,
       )}
       {...props}

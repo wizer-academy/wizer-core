@@ -17,6 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
@@ -26,6 +27,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 =======
 >>>>>>> 68312a0 (chore: initial config)
 >>>>>>> 7203dad (chore: initial config)
+=======
+>>>>>>> 7f695d7 (chore: rebase main branch)
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
