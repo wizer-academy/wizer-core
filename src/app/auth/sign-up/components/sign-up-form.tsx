@@ -167,7 +167,7 @@ export default function SignUpForm() {
           <div className="flex gap-2">
             <Checkbox id="terms" checked={value} onCheckedChange={onChange} />
 
-            <label htmlFor="terms">
+            <label htmlFor="terms" className="text-sm lg:text-base">
               Eu concordo com os <a href="#">termos e condições</a>
             </label>
           </div>
