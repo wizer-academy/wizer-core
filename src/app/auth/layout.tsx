@@ -46,7 +46,7 @@ export default function AuthLayout({
             {/* TODO: quando implementar os diferentes meios de autenticação
               queriar um componente para lidar com isso.
             */}
-            <div className="flex w-full justify-center gap-7">
+            <div className="flex w-full justify-center gap-4 sm:gap-7">
               <Button size="icon" className="bg-[#3B5998]">
                 <FacebookIcon className="h-[18px] sm:h-6" />
               </Button>
