@@ -1,4 +1,8 @@
-export function GithubIcon() {
+import { SVGProps } from 'react'
+
+type GithubIconProps = SVGProps<SVGSVGElement>
+
+export function GithubIcon(props: GithubIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,7 @@ export function GithubIcon() {
       height="29"
       fill="none"
       viewBox="0 0 30 29"
+      {...props}
     >
       <path
         fill="#F8F8F8"

@@ -1,4 +1,8 @@
-export function FacebookIcon() {
+import { SVGProps } from 'react'
+
+type FacebookIconProps = SVGProps<SVGSVGElement>
+
+export function FacebookIcon(props: FacebookIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,7 @@ export function FacebookIcon() {
       height="25"
       fill="none"
       viewBox="0 0 12 25"
+      {...props}
     >
       <path
         fill="#F8F8F8"

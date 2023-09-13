@@ -43,18 +43,21 @@ export default function AuthLayout({
               <div className="h-px w-full bg-white" />
             </div>
 
+            {/* TODO: quando implementar os diferentes meios de autenticação
+              queriar um componente para lidar com isso.
+            */}
             <div className="flex w-full justify-center gap-7">
               <Button size="icon" className="bg-[#3B5998]">
-                <FacebookIcon />
+                <FacebookIcon className="h-[18px] sm:h-6" />
               </Button>
               <Button size="icon" className="bg-[#E52C34]">
-                <GoogleIcon />
+                <GoogleIcon className="h-[18px] sm:h-6" />
               </Button>
               <Button size="icon" className="bg-[#F8F8F8]">
-                <AppleIcon />
+                <AppleIcon className="h-[18px] sm:h-6" />
               </Button>
               <Button size="icon" className="bg-[#4E4C83]">
-                <GithubIcon />
+                <GithubIcon className="h-[18px] sm:h-6" />
               </Button>
             </div>
           </footer>

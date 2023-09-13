@@ -2,6 +2,10 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { tv, type VariantProps } from 'tailwind-variants'
 
+/**
+ * As variantes do botão precisam ser ajustadas conforme a necessidade do layout.
+ */
+
 const buttonVariants = tv({
   base: 'inline-flex items-center justify-center rounded-[10px] md:text-xl font-semibold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:bg-[#32405B]',
   variants: {

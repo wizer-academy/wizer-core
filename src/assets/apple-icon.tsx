@@ -1,4 +1,8 @@
-export function AppleIcon() {
+import { SVGProps } from 'react'
+
+type AppleIconProps = SVGProps<SVGSVGElement>
+
+export function AppleIcon(props: AppleIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,7 @@ export function AppleIcon() {
       height="27"
       fill="none"
       viewBox="0 0 23 27"
+      {...props}
     >
       <path
         fill="#1E1E1E"

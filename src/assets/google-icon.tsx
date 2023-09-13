@@ -1,4 +1,8 @@
-export function GoogleIcon() {
+import { SVGProps } from 'react'
+
+type GoogleIconProps = SVGProps<SVGSVGElement>
+
+export function GoogleIcon(props: GoogleIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,7 @@ export function GoogleIcon() {
       height="25"
       fill="none"
       viewBox="0 0 25 25"
+      {...props}
     >
       <path
         fill="#F8F8F8"
