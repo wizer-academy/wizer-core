@@ -39,7 +39,7 @@ function InputRoot({ error = false, ...props }: InputRootProps) {
       <div
         data-error={error}
         className={twMerge(
-          'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px]',
+          'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px] transition-colors',
           props.className,
         )}
         {...props}
@@ -79,7 +79,7 @@ function InputLabel(props: InputLabelProps) {
     <label
       data-error={error}
       className={twMerge(
-        'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium',
+        'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium transition-colors',
         props.className,
       )}
       {...props}

@@ -14,6 +14,7 @@ const config: Config = {
         text: 'var(--text)',
         primary: 'var(--primary)',
         alert: 'var(--alert)',
+        success: 'var(--success)',
       },
       backgroundImage: {
         'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",
@@ -24,6 +25,6 @@ const config: Config = {
       sans: ['var(--font-poppins)'],
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 }
 export default config
