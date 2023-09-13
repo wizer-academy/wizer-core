@@ -13,6 +13,7 @@ const config: Config = {
         background: 'var(--background)',
         text: 'var(--text)',
         primary: 'var(--primary)',
+        alert: 'var(--alert)',
       },
       backgroundImage: {
         'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",

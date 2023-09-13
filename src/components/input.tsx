@@ -4,7 +4,6 @@ import { Eye, EyeOff } from 'lucide-react'
 import {
   LabelHTMLAttributes,
   InputHTMLAttributes,
-  ReactNode,
   forwardRef,
   useState,
   createContext,
@@ -17,15 +16,16 @@ import { twMerge } from 'tailwind-merge'
 type InputContextProps = {
   isShowPassword: boolean
   handleToggleShowPassword: () => void
+  error: boolean
 }
 
 const InputContext = createContext({} as InputContextProps)
 
 export interface InputRootProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode
+  error?: boolean
 }
 
-function InputRoot(props: InputRootProps) {
+function InputRoot({ error = false, ...props }: InputRootProps) {
   const [isShowPassword, setIsShowPassword] = useState(false)
 
   const handleToggleShowPassword = useCallback(() => {
@@ -33,10 +33,13 @@ function InputRoot(props: InputRootProps) {
   }, [])
 
   return (
-    <InputContext.Provider value={{ isShowPassword, handleToggleShowPassword }}>
+    <InputContext.Provider
+      value={{ isShowPassword, handleToggleShowPassword, error }}
+    >
       <div
+        data-error={error}
         className={twMerge(
-          'relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px]',
+          'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px]',
           props.className,
         )}
         {...props}
@@ -70,13 +73,16 @@ InputControl.displayName = 'InputControl'
 type InputLabelProps = LabelHTMLAttributes<HTMLLabelElement>
 
 function InputLabel(props: InputLabelProps) {
+  const { error } = useContext(InputContext)
+
   return (
     <label
-      {...props}
+      data-error={error}
       className={twMerge(
-        'absolute -top-4 left-2.5 bg-background px-[10px] font-medium',
+        'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium',
         props.className,
       )}
+      {...props}
     />
   )
 }
@@ -95,4 +101,16 @@ function InputPasswordViewControl() {
   )
 }
 
-export { InputRoot, InputControl, InputLabel, InputPasswordViewControl }
+type InputMessageErrorProps = HTMLAttributes<HTMLSpanElement>
+
+function InputMessageError(props: InputMessageErrorProps) {
+  return <span className="text-alert text-xs" {...props} />
+}
+
+export {
+  InputRoot,
+  InputControl,
+  InputLabel,
+  InputPasswordViewControl,
+  InputMessageError,
+}

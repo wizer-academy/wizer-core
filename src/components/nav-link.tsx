@@ -16,14 +16,14 @@ export function NavLink(props: NavLinkProps) {
     <Link
       data-active={isActive}
       className={twMerge(
-        'relative flex w-full items-center justify-center py-[13px] text-lg text-[#6A6D71] transition-colors data-[active=true]:font-semibold data-[active=true]:text-white',
+        'relative flex w-full items-center justify-center py-[13px] text-lg text-[#6A6D71] transition-colors hover:text-white data-[active=true]:font-semibold data-[active=true]:text-white',
         props.className,
       )}
       {...props}
     >
       {props.children}
       {isActive && (
-        <div className="bg-primary absolute -bottom-px left-0 right-0 h-0.5" />
+        <div className="absolute -bottom-px left-0 right-0 h-0.5 bg-primary" />
       )}
     </Link>
   )

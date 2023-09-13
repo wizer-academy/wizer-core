@@ -21,7 +21,7 @@ export default function AuthLayout({
       </div>
 
       <div className="relative flex w-full flex-col justify-center overflow-y-auto py-10">
-        <div className="bg-background-blur absolute bottom-0 right-0 min-h-screen w-full bg-cover bg-no-repeat" />
+        <div className="absolute bottom-0 right-0 -z-20 min-h-screen w-full bg-background-blur bg-cover bg-no-repeat" />
 
         <div className="mx-auto flex w-full max-w-[453px] flex-col justify-center">
           <Logo className="mx-auto" />

@@ -42,10 +42,10 @@ export default function SignUp() {
         </InputRoot>
 
         <InputRoot>
-          <InputLabel htmlFor="confirm-password">Senha</InputLabel>
+          <InputLabel htmlFor="confirm-password">Confirme sua senha</InputLabel>
           <InputControl
             id="confirm-password"
-            type="confirm-password"
+            type="password"
             placeholder="Confirme sua senha"
           />
           <InputPasswordViewControl />
