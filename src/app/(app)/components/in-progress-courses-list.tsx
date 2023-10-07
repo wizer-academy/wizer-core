@@ -11,18 +11,22 @@ export const courses = [
   {
     id: '1',
     title: 'Programação',
+    process: 40,
   },
   {
     id: '2',
     title: 'Devops',
+    process: 70,
   },
   {
     id: '3',
     title: 'Front-end',
+    process: 100,
   },
   {
     id: '4',
     title: 'Software',
+    process: 20,
   },
 ]
 
@@ -41,7 +45,11 @@ export function InProgressCourseList() {
       <Collapsible.Content>
         <ul className="mt-6 grid grid-cols-4 gap-4">
           {courses.map((course) => (
-            <CourseCard key={course.id} title={course.title} />
+            <CourseCard
+              key={course.id}
+              title={course.title}
+              process={course.process}
+            />
           ))}
         </ul>
       </Collapsible.Content>

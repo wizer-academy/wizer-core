@@ -5,9 +5,10 @@ import { ComputerIcon } from '@/assets/computer-icon'
 
 interface CourseCardProps {
   title: string
+  process: number
 }
 
-export function CourseCard({ title }: CourseCardProps) {
+export function CourseCard({ title, process }: CourseCardProps) {
   return (
     <li className="overflow-hidden rounded-[10px]">
       <a
@@ -29,7 +30,7 @@ export function CourseCard({ title }: CourseCardProps) {
 
         <Progress
           className="absolute bottom-0 left-1/2 h-3 w-full -translate-x-1/2 rounded-none"
-          value={55}
+          value={process}
         />
       </a>
     </li>
