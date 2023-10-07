@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { courses } from './in-progress-courses-list'
 
 import * as Collapsible from '@radix-ui/react-collapsible'
-import { ChevronDown, ChevronUp } from 'lucide-react'
 import { ClassCard } from './class-card'
+
+import { ChevronDown, ChevronUp } from 'lucide-react'
 
 export function SuggestedCoursesList() {
   const [open, setOpen] = useState(true)
@@ -17,11 +19,10 @@ export function SuggestedCoursesList() {
         {open ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
       </Collapsible.Trigger>
       <Collapsible.Content>
-        <ul className="grid grid-cols-4 gap-4">
-          <ClassCard />
-          <ClassCard />
-          <ClassCard />
-          <ClassCard />
+        <ul className="mt-6 grid grid-cols-4 gap-4">
+          {courses.map((course) => (
+            <ClassCard key={course.id} title={course.title} />
+          ))}
         </ul>
       </Collapsible.Content>
     </Collapsible.Root>

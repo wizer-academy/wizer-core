@@ -1,8 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { ComputerIcon } from '@/assets/computer-icon'
 import { Progress } from '@/components/progress'
 
-export function CourseCard() {
+import { ComputerIcon } from '@/assets/computer-icon'
+
+interface CourseCardProps {
+  title: string
+}
+
+export function CourseCard({ title }: CourseCardProps) {
   return (
     <li className="overflow-hidden rounded-[10px]">
       <a
@@ -19,7 +24,7 @@ export function CourseCard() {
 
         <div className="z-10 flex flex-col items-center justify-center gap-1 py-[59px]">
           <ComputerIcon />
-          <strong className="text-xl font-medium">Programação</strong>
+          <strong className="text-xl font-medium">{title}</strong>
         </div>
 
         <Progress

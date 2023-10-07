@@ -1,10 +1,30 @@
 'use client'
 
 import { useState } from 'react'
+import { ClassCard } from './class-card'
 
 import * as Collapsible from '@radix-ui/react-collapsible'
+
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import { ClassCard } from './class-card'
+
+const lessons = [
+  {
+    id: '1',
+    title: 'Aula 10: Java',
+  },
+  {
+    id: '2',
+    title: 'Aula 9: PHP',
+  },
+  {
+    id: '3',
+    title: 'Aula 8: Python',
+  },
+  {
+    id: '4',
+    title: 'Aula 1: HTML',
+  },
+]
 
 export function KeepWatchingList() {
   const [open, setOpen] = useState(true)
@@ -17,11 +37,10 @@ export function KeepWatchingList() {
         {open ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
       </Collapsible.Trigger>
       <Collapsible.Content>
-        <ul className="grid grid-cols-4 gap-4">
-          <ClassCard />
-          <ClassCard />
-          <ClassCard />
-          <ClassCard />
+        <ul className="mt-6 grid grid-cols-4 gap-4">
+          {lessons.map((lesson) => (
+            <ClassCard key={lesson.id} title={lesson.title} />
+          ))}
         </ul>
       </Collapsible.Content>
     </Collapsible.Root>

@@ -1,7 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { PlayerIcon } from '@/assets/player-icon'
 
-export function ClassCard() {
+interface ClassCardProps {
+  title: string
+}
+
+export function ClassCard({ title }: ClassCardProps) {
   return (
     <li className="max-h-[185px] overflow-hidden rounded-[10px] shadow-md shadow-black/20">
       <a
@@ -18,7 +22,7 @@ export function ClassCard() {
 
         <div className="z-10 flex flex-col items-center justify-center gap-4 py-[42px]">
           <PlayerIcon />
-          <strong className="text-xl font-medium">Aula 10: Java</strong>
+          <strong className="text-xl font-medium text-white">{title}</strong>
         </div>
       </a>
     </li>
