@@ -1,7 +1,7 @@
 'use client'
 
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
-import { Check } from 'lucide-react'
+import { LuCheck } from 'react-icons/lu'
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -20,7 +20,7 @@ export const Checkbox = forwardRef<
         {...props}
       >
         <CheckboxPrimitive.Indicator>
-          <Check className="text-black" size={13} strokeWidth={2.5} />
+          <LuCheck className="text-black" size={13} strokeWidth={2.5} />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
     </div>

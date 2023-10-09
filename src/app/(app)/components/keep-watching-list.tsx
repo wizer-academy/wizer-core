@@ -5,7 +5,7 @@ import { ClassCard } from './class-card'
 
 import * as Collapsible from '@radix-ui/react-collapsible'
 
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { LuChevronDown, LuChevronUp } from 'react-icons/lu'
 
 const lessons = [
   {
@@ -34,7 +34,7 @@ export function KeepWatchingList() {
       <Collapsible.Trigger className="inline-flex items-center gap-3 transition-all">
         <h2 className="text-[1.75rem] font-semibold">Continue assistindo</h2>
 
-        {open ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
+        {open ? <LuChevronUp size={32} /> : <LuChevronDown size={32} />}
       </Collapsible.Trigger>
       <Collapsible.Content>
         <ul className="mt-6 grid grid-cols-4 gap-4">

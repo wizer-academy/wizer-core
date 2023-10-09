@@ -1,6 +1,6 @@
 'use client'
 
-import { Eye, EyeOff } from 'lucide-react'
+import { LuEye, LuEyeOff } from 'react-icons/lu'
 import {
   LabelHTMLAttributes,
   InputHTMLAttributes,
@@ -39,7 +39,7 @@ function InputRoot({ error = false, ...props }: InputRootProps) {
       <div
         data-error={error}
         className={twMerge(
-          'data-[error=true]:border-alert relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px] transition-colors',
+          'relative flex h-[58px] rounded-[10px] border border-white px-[22px] py-[18px] transition-colors data-[error=true]:border-alert',
           props.className,
         )}
         {...props}
@@ -79,7 +79,7 @@ function InputLabel(props: InputLabelProps) {
     <label
       data-error={error}
       className={twMerge(
-        'data-[error=true]:text-alert absolute -top-4 left-2.5 bg-background px-[10px] font-medium transition-colors',
+        'absolute -top-4 left-2.5 bg-background px-[10px] font-medium transition-colors data-[error=true]:text-alert',
         props.className,
       )}
       {...props}
@@ -96,7 +96,7 @@ function InputPasswordViewControl() {
       type="button"
       className="transition-all"
     >
-      {isShowPassword ? <Eye size={22} /> : <EyeOff size={22} />}
+      {isShowPassword ? <LuEye size={22} /> : <LuEyeOff size={22} />}
     </button>
   )
 }
@@ -104,7 +104,7 @@ function InputPasswordViewControl() {
 type InputMessageErrorProps = HTMLAttributes<HTMLSpanElement>
 
 function InputMessageError(props: InputMessageErrorProps) {
-  return <span className="text-alert text-xs" {...props} />
+  return <span className="text-xs text-alert" {...props} />
 }
 
 export {

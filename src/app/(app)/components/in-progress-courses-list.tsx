@@ -5,7 +5,7 @@ import { useState } from 'react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { CourseCard } from './course-card'
 
-import { ChevronUp, ChevronDown } from 'lucide-react'
+import { LuChevronUp, LuChevronDown } from 'react-icons/lu'
 
 export const courses = [
   {
@@ -40,7 +40,7 @@ export function InProgressCourseList() {
           Meus cursos em andamento
         </h2>
 
-        {open ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
+        {open ? <LuChevronUp size={32} /> : <LuChevronDown size={32} />}
       </Collapsible.Trigger>
       <Collapsible.Content>
         <ul className="mt-6 grid grid-cols-4 gap-4">

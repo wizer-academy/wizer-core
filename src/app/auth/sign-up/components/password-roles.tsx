@@ -12,7 +12,7 @@ export function PasswordRoles() {
   const hasOneNumber = /[0-9]/.test(passwordField)
 
   return (
-    <div className="animate-in slide-in-from-top-3 space-y-3 duration-300">
+    <div className="space-y-3 duration-300 animate-in slide-in-from-top-3">
       <div
         data-is-valid={hasAtLeastEightCharacters}
         className="group flex gap-2 text-alert transition-colors data-[is-valid=true]:text-success"
