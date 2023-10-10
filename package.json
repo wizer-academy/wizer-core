@@ -11,6 +11,8 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
     "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@tanstack/react-query": "^4.35.0",
     "@types/node": "18.15.11",
@@ -19,11 +21,11 @@
     "axios": "^1.4.0",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
-    "lucide-react": "^0.269.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "tailwind-merge": "^1.14.0",
     "tailwind-variants": "^0.1.14",
     "typescript": "5.0.3"
   },

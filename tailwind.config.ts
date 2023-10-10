@@ -19,9 +19,10 @@ const config: Config = {
       backgroundImage: {
         'sign-in-hero-background': "url('/images/sign-in-hero-background.png')",
         'background-blur': "url('/images/background-blur.svg')",
+        'background-app': "url('/images/background.png')",
+        'progress-gradient':
+          'linear-gradient(90deg, #0C66C6 0.6%, #9747FF 80.88%)',
       },
-
-
     },
     fontFamily: {
       sans: ['var(--font-poppins)'],
