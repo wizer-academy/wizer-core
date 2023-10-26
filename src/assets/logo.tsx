@@ -6,7 +6,7 @@ export function Logo(props: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="177"
+      width="100"
       height="55"
       fill="none"
       viewBox="0 0 177 55"
